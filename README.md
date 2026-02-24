@@ -1,124 +1,188 @@
-The Empathy Engine
-Giving AI a Human Voice
+# 🎙️ The Empathy Engine
 
-The Empathy Engine is an emotion-aware Text-to-Speech (TTS) service that dynamically adjusts vocal characteristics based on the detected emotion of input text. It enhances traditional robotic TTS systems by introducing expressive, human-like modulation.
+## *Giving AI a Human Voice*
 
-Features
+The Empathy Engine is an emotion-aware Text-to-Speech (TTS) service that
+dynamically adjusts vocal characteristics based on the detected emotion
+of input text.
 
-Emotion Detection
+It enhances traditional robotic TTS systems by introducing expressive,
+human-like voice modulation.
 
-Detects base sentiment: Positive, Negative, Neutral
+------------------------------------------------------------------------
 
-Detects granular states: Surprised, Inquisitive, Concerned
+# ✨ Features
 
-Dynamic Voice Modulation
+## 🔍 Emotion Detection
 
-Adjusts Speech Rate and Volume
+The engine analyzes input text and detects:
 
-Emotional Personas:
+### Base Sentiment
 
-Positive → Fast, energetic
+-   **Positive**
+-   **Negative**
+-   **Neutral**
 
-Negative → Very slow, soft
+### Granular Emotional States
 
-Surprised → Rapid, louder
+-   **Surprised**
+-   **Inquisitive**
+-   **Concerned**
 
-Concerned → Slow, soft
+------------------------------------------------------------------------
 
-Inquisitive → Slightly faster, engaging
+## 🎚 Dynamic Voice Modulation
 
-Neutral → Balanced and steady
+The system adjusts:
 
-Smart Voice Selection
+-   **Speech Rate**
+-   **Volume**
 
-Attempts to select a female voice (e.g., "Zira" on Windows) for a more empathetic tone.
+### Emotional Personas
 
-Web Interface
+-   **Positive** → Fast, energetic\
+-   **Negative** → Very slow, soft\
+-   **Surprised** → Rapid, louder\
+-   **Concerned** → Slow, soft\
+-   **Inquisitive** → Slightly faster, engaging\
+-   **Neutral** → Balanced and steady
 
-Simple UI to analyze text and generate expressive speech.
+------------------------------------------------------------------------
 
-CLI Support
+## 🎤 Smart Voice Selection
 
-Quick emotion analysis and speech generation via terminal.
+The system attempts to automatically select a more empathetic female
+voice (e.g., **"Zira"** on Windows), if available.
 
-Prerequisites
+------------------------------------------------------------------------
 
-Python 3.8+
+## 🌐 Web Interface
 
-Windows (Recommended for pyttsx3 voice support), macOS, or Linux
+-   Simple and clean UI
+-   Enter text
+-   Analyze emotion
+-   Generate expressive speech instantly
 
-Setup
-1. Navigate to Project Directory
+------------------------------------------------------------------------
+
+## 💻 CLI Support
+
+``` bash
+python cli.py "I am so happy to see you!"
+python cli.py "This is really frustrating."
+```
+
+------------------------------------------------------------------------
+
+# 📦 Prerequisites
+
+-   Python 3.8+
+-   Windows (Recommended for `pyttsx3` voice support)
+-   macOS or Linux (also supported)
+
+------------------------------------------------------------------------
+
+# ⚙️ Setup
+
+## 1️⃣ Navigate to Project Directory
+
+``` bash
 cd empathy_engine
-2. Create and Activate Virtual Environment
-# Windows
+```
+
+## 2️⃣ Create and Activate Virtual Environment
+
+### Windows
+
+``` bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-# macOS/Linux
+### macOS/Linux
+
+``` bash
 python3 -m venv venv
 source venv/bin/activate
-3. Install Dependencies
-pip install -r requirements.txt
-Usage
-Web Interface (Recommended)
-python main.py
+```
 
-Open your browser and visit:
+## 3️⃣ Install Dependencies
+
+``` bash
+pip install -r requirements.txt
+```
+
+------------------------------------------------------------------------
+
+# 🚀 Usage
+
+## 🌐 Web Interface
+
+``` bash
+python main.py
+```
+
+Open your browser:
 
 http://localhost:8000
 
-Enter text and click Analyze or Speak.
+------------------------------------------------------------------------
 
-CLI
+## 💻 CLI Mode
+
+``` bash
 python cli.py "I am so happy to see you!"
-python cli.py "This is really frustrating."
-Design Choices
+```
 
-Emotion Analysis
+------------------------------------------------------------------------
 
-Uses vaderSentiment for polarity scoring.
+# 🧠 Design Choices
 
-Applies lightweight heuristic rules (punctuation, keywords) to detect nuanced emotions like surprise and concern.
+## Emotion Analysis
 
-TTS Engine
+-   Uses `vaderSentiment` for sentiment polarity scoring.
+-   Applies heuristic rules (punctuation, keywords) to detect nuanced
+    emotions like surprise and concern.
 
-pyttsx3 selected for:
+## TTS Engine
 
-Offline capability
+`pyttsx3` was selected because:
 
-Cross-platform compatibility
+-   Works fully offline
+-   No API key required
+-   Cross-platform support
+-   Stable control over speech rate and volume
 
-Stable rate and volume control
+## Modulation Logic
 
-Modulation Logic
+-   **Rate** conveys emotional energy (fast = excitement, slow =
+    concern).
+-   **Volume** enhances emotional tone (loud = surprise, soft = worry).
 
-Rate conveys emotional energy (fast = excitement, slow = concern).
+This parameter-based modulation ensures consistent playback without
+relying on unstable SSML implementations.
 
-Volume enhances emotional tone (loud = surprise, soft = worry).
+------------------------------------------------------------------------
 
-This parameter-based modulation ensures consistent playback without relying on unstable SSML implementations.
+# 🛠 Troubleshooting
 
-Troubleshooting
+-   **No Audio** → Check system volume.
+-   **Module Not Found** → Activate virtual environment and ensure
+    correct directory.
 
-No Audio
+------------------------------------------------------------------------
 
-Check system volume and speaker output.
+# 🧪 Example Inputs
 
-Module Not Found
+-   "I cant, I am so worried about this situation."
+-   "Wait, really? That happened?"
+-   "Oh my god! That is amazing!"
+-   "Why would they do that?"
+-   "This is the best news ever!"
 
-Ensure virtual environment is activated.
+------------------------------------------------------------------------
 
-Ensure you are inside the empathy_engine directory.
+# 🎯 Conclusion
 
-Example Inputs
-
-"I cant, I am so worried about this situation."
-
-"Wait, really? That happened?"
-
-"Oh my god! That is amazing!"
-
-"Why would they do that?"
-
-"This is the best news ever!"
+The Empathy Engine demonstrates how AI can move beyond functional speech
+synthesis and incorporate emotional intelligence into voice interaction.
